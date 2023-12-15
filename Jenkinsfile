@@ -10,13 +10,13 @@ pipeline {
         stage('Build Maven'){
             steps{
                 checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/maniranganathan97/devops-automation']]])
-                sh 'mvn clean install'
+                bat 'mvn clean install'
             }
         }
         stage('Build docker image'){
             steps{
                 script{
-                    sh 'docker build -t mani/devops-integration .'
+                    bat 'docker build -t mani/devops-integration .'
                 }
             }
         }
@@ -24,10 +24,10 @@ pipeline {
             steps{
                 script{
                   withCredentials([string(credentialsId: 'DockerId', variable: 'DockerId')]) {
-                   sh 'docker login -u manir1389 -p ${DockerId}'
+                   bat 'docker login -u manir1389 -p Indhumathi@123'
 
                    }
-                   sh 'docker push mani/devops-integration'
+                   bat 'docker push mani/devops-integration'
                 }
             }
         }
