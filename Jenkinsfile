@@ -24,7 +24,7 @@ pipeline {
                    bat 'docker login -u manir1389 -p Indhumathi@123'
 
                    }
-                   bat 'docker push mani/devops-integration'
+                   bat 'docker push mani/devops-integration:latest'
                 }
             }
         }
