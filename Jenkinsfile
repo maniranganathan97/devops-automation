@@ -21,7 +21,7 @@ pipeline {
             steps{
                 script{
                    withCredentials([string(credentialsId: 'dockerPwd', variable: 'dockerPwd')]) {
-                   bat 'docker login -u mani -p ${dockerPwd}'
+                   bat 'docker login -u manir1389 -p ${dockerPwd}'
 
                    }
                    bat 'docker push mani/devops-integration'
