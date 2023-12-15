@@ -13,7 +13,7 @@ pipeline {
         stage('Build docker image'){
             steps{
                 script{
-                    bat 'docker build -t mani/devops-integration .'
+                    bat 'docker build -t manir1389/devops-integration .'
                 }
             }
         }
@@ -24,7 +24,7 @@ pipeline {
                    bat 'docker login -u manir1389 -p Indhumathi@123'
 
                    }
-                   bat 'docker push mani/devops-integration:latest'
+                   bat 'docker push manir1389/devops-integration:latest'
                 }
             }
         }
