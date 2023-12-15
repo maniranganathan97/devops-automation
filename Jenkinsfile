@@ -20,7 +20,7 @@ pipeline {
            stage('Push image to Hub'){
             steps{
                 script{
-                   withCredentials([string(credentialsId: 'dockerPwd', variable: 'dockerPwd')]) {
+                  withCredentials([string(credentialsId: 'DockerId', variable: 'DockerId')]) {
                    bat 'docker login -u manir1389 -p ${dockerPwd}'
 
                    }
