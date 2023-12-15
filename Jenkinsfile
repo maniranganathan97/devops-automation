@@ -20,8 +20,8 @@ pipeline {
            stage('Push image to Hub'){
             steps{
                 script{
-                   withCredentials([string(credentialsId: 'dockerhub-pwd', variable: 'dockerhubpwd')]) {
-                   sh 'docker login -u mani -p ${dockerhubpwd}'
+                   withCredentials([string(credentialsId: 'dockerPwd', variable: 'dockerPwd')]) {
+                   sh 'docker login -u mani -p ${dockerPwd}'
 
                    }
                    sh 'docker push mani/devops-integration'
