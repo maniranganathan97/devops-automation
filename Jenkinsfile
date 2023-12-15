@@ -21,10 +21,10 @@ pipeline {
             steps{
                 script{
                    withCredentials([string(credentialsId: 'dockerPwd', variable: 'dockerPwd')]) {
-                   sh 'docker login -u mani -p ${dockerPwd}'
+                   bat 'docker login -u mani -p ${dockerPwd}'
 
                    }
-                   sh 'docker push mani/devops-integration'
+                   bat 'docker push mani/devops-integration'
                 }
             }
         }
